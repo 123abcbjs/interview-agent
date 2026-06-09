@@ -15,7 +15,6 @@
 ## 安装
 
 ```powershell
-cd C:\Users\26873\Documents\简历求职\interview_agent
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
