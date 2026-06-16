@@ -10,7 +10,6 @@
 - 使用 DeepSeek 生成面试问题并评价回答
 - 根据岗位要求、候选人经历和上一轮回答动态调整问题
 - 使用简单关键词匹配选择相关 JD 和简历片段
-- 支持替换自定义 JD 与简历文本文件
 - 将面试结果保存为 Markdown
 
 ## 安装
@@ -35,16 +34,21 @@ DEEPSEEK_API_KEY=你的 API Key
 
 ## 运行
 
-使用内置示例：
+直接运行：
 
 ```powershell
 python main.py
 ```
 
-使用自定义 UTF-8 文本文件：
+如果想换 JD、简历、轮数或模型参数，直接改 `main.py` 顶部这几行：
 
-```powershell
-python main.py --jd .\my_jd.txt --resume .\my_resume.txt
+```python
+JD_FILE = EXAMPLES_DIR / "jd.txt"
+RESUME_FILE = EXAMPLES_DIR / "resume.txt"
+TOTAL_ROUNDS = 3
+MODEL_NAME = "deepseek-chat"
+MODEL_TEMPERATURE = 0.3
+MODEL_MAX_TOKENS = 800
 ```
 
 报告会保存到 `reports/` 目录。
